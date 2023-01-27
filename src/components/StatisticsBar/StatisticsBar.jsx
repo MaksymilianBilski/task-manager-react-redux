@@ -1,4 +1,5 @@
 import { TaskCounter } from 'components/TaskCounter/TaskCounter';
+import { TasksFilter } from 'components/TasksFilter/TasksFilter';
 import css from './StatisticsBar.module.css';
 
 const StatisticsBar = () => {
@@ -10,6 +11,7 @@ const StatisticsBar = () => {
       </section>
       <section className={css.filterSection}>
         <h2>Filter by status:</h2>
+        <TasksFilter />
       </section>
     </header>
   );
