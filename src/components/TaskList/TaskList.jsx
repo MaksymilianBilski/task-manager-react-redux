@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Task } from 'components/Task/Task';
+import css from './TaskList.module.css';
 
 const getVisibleTasks = (tasks, statusFilter) => {
   switch (statusFilter) {
@@ -17,7 +18,7 @@ const TaskList = () => {
   const statusFilter = useSelector(state => state.filters.status);
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
   return (
-    <ul>
+    <ul className={css.taskList}>
       {visibleTasks.map(task => (
         <li key={task.id}>
           <Task task={task} />

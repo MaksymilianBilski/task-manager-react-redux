@@ -1,0 +1,7 @@
+.taskList {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 600px;
+    height: 200px;
+}

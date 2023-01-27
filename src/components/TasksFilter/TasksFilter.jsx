@@ -1,15 +1,37 @@
-import { statusFilters } from 'components/redux/filters/constant';
-import { useSelector } from 'react-redux';
+import { setStatusFilter } from 'redux/filters/actions';
+import { statusFilters } from 'redux/filters/constant';
+import { useDispatch, useSelector } from 'react-redux';
+import { getStatusFilter } from 'redux/filters/selector';
 import { Button } from 'components/Button/Button';
 
 const TasksFilter = () => {
-  const filter = useSelector(state => state.filter.status);
+  const dispatch = useDispatch();
+  const filter = useSelector(getStatusFilter);
+
+  const handleFilterChange = filter => {
+    dispatch(setStatusFilter(filter));
+  };
 
   return (
     <div>
-      <Button selected={filter === statusFilters.all}>All</Button>
-      <Button selected={filter === statusFilters.active}>Active</Button>
-      <Button selected={filter === statusFilters.completed}>Completed</Button>
+      <Button
+        selected={filter === statusFilters.all}
+        onClick={() => handleFilterChange(statusFilters.all)}
+      >
+        All
+      </Button>
+      <Button
+        selected={filter === statusFilters.active}
+        onClick={() => handleFilterChange(statusFilters.active)}
+      >
+        Active
+      </Button>
+      <Button
+        selected={filter === statusFilters.completed}
+        onClick={() => handleFilterChange(statusFilters.completed)}
+      >
+        Completed
+      </Button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { Layout } from './Layout/Layout';
 import TaskForm from './TaskForm/TaskForm';
 import { StatisticsBar } from './StatisticsBar/StatisticsBar';
-import { TasksFilter } from './TasksFilter/TasksFilter';
+import { TaskList } from './TaskList/TaskList';
 
 export const App = () => {
   return (
@@ -18,7 +18,7 @@ export const App = () => {
       <Layout>
         <StatisticsBar />
         <TaskForm />
-        <TasksFilter />
+        <TaskList />
       </Layout>
     </div>
   );
