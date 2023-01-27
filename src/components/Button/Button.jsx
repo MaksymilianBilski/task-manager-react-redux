@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const Button = ({ selected, children, type = 'button', ...otherProps }) => {
   return (
     <button selected={selected} type={type} {...otherProps}>
