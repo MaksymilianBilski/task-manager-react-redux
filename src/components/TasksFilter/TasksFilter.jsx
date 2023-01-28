@@ -1,7 +1,7 @@
-import { setStatusFilter } from 'redux/filters/actions';
+import { setStatusFilter } from 'redux/filters/filtersActions';
 import { statusFilters } from 'redux/filters/constant';
 import { useDispatch, useSelector } from 'react-redux';
-import { getStatusFilter } from 'redux/filters/selector';
+import { getStatusFilter } from 'redux/filters/filtersSelector';
 import { Button } from 'components/Button/Button';
 
 const TasksFilter = () => {
