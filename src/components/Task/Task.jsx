@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteTask, toggleCompleted } from 'redux/tasks/tasksActions';
+import { deleteTask, toggleCompleted } from 'redux/tasks/tasksReducer';
 import css from './Task.module.css';
 
 const Task = ({ task }) => {

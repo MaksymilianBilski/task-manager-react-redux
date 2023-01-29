@@ -1,4 +1,4 @@
-import { setStatusFilter } from 'redux/filters/filtersActions';
+import { setStatusFilter } from 'redux/filters/filtersSlice';
 import { statusFilters } from 'redux/filters/constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStatusFilter } from 'redux/filters/filtersSelector';
