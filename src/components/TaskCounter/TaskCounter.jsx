@@ -3,9 +3,8 @@ import { tasksReducer } from 'redux/tasks/tasksReducer';
 import { getTasks } from 'redux/tasks/tasksSelector';
 
 const TaskCounter = () => {
-  console.log(tasksReducer);
   const tasks = useSelector(getTasks);
-  const result = tasks.reduce(
+  const result = tasks.items.reduce(
     (pv, task) => {
       if (task.completed) {
         pv.completed += 1;
