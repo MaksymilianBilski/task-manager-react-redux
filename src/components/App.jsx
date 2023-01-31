@@ -4,12 +4,13 @@ import { Layout } from './Layout/Layout';
 import TaskForm from './TaskForm/TaskForm';
 import { StatisticsBar } from './StatisticsBar/StatisticsBar';
 import { TaskList } from './TaskList/TaskList';
-import { getTasks } from 'redux/tasks/tasksSelector';
+import { getError, getIsLoading} from 'redux/tasks/tasksSelector';
 import { fetchTasks } from 'redux/operation';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { items, isLoading, error } = useSelector(getTasks);
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
 
   useEffect(() => {
     dispatch(fetchTasks());
@@ -27,11 +28,12 @@ export const App = () => {
       }}
     >
       <Layout>
-        <div>
+        {/* <div>
           {isLoading && <p>Loading tasks...</p>}
           {error && <p>{error}</p>}
           <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
-        </div>
+        </div> */}
+        {isLoading && !error && <p>in progress...</p>}
         <StatisticsBar />
         <TaskForm />
         <TaskList />
